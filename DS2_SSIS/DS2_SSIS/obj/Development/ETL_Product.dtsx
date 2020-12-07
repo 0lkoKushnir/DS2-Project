@@ -1,0 +1,2694 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/23/2020 3:50:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-0OE0JIH"
+  DTS:CreatorName="DESKTOP-0OE0JIH\user"
+  DTS:DTSID="{50ECD516-1FFA-4ECB-A097-DC530F450C0A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{90A07BD2-B808-4268-866C-0682D6854F24}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Product"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{71FF2DE6-473C-4150-833E-A1EFB2FB4126}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Product"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Product\Add End Date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add End Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Add End Date.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Product\Add End Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Output].Columns[EffectiveEndDate]"
+                      dataType="dbTimeStamp"
+                      description="EffectiveEndDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Output].Columns[EffectiveEndDate]"
+                      name="EffectiveEndDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Product\Add End Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Add Start Date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Start Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Add Start Date.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Product\Add Start Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Output].Columns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Output].Columns[EffectiveStartDate]"
+                      name="EffectiveStartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Product\Add Start Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Convert to STR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to STR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input].Columns[new Copy of Special_YesNo]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="new Copy of Special_YesNo"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Special_YesNo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input].Columns[new Copy of Title_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="new Copy of Title_Cap"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Title_Cap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input].Columns[new Copy of Actor_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="new Copy of Actor_Cap"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Actor_Cap]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Special_YesNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Special_YesNo]"
+                      name="NEW Copy of Special_YesNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Special_YesNo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Title_Cap]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Title_Cap]"
+                      name="NEW Copy of Title_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Title_Cap]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Actor_Cap]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Actor_Cap]"
+                      name="NEW Copy of Actor_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Actor_Cap]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Convert to WSTR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to WSTR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input].Columns[Copy of Special_YesNo]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Copy of Special_YesNo"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Special_YesNo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input].Columns[Copy of Title_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Title_Cap"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Title_Cap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input].Columns[Copy of Actor_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Actor_Cap"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Actor_Cap]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Special_YesNo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Special_YesNo]"
+                      name="new Copy of Special_YesNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Special_YesNo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Title_Cap]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Title_Cap]"
+                      name="new Copy of Title_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Title_Cap]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Actor_Cap]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output].Columns[new Copy of Actor_Cap]"
+                      name="new Copy of Actor_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Actor_Cap]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input].Columns[Special_YesNo]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Special_YesNo"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Special_YesNo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input].Columns[Title_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Title_Cap"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Title_Cap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input].Columns[Actor_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Actor_Cap"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Actor_Cap]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Special_YesNo]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Special_YesNo]"
+                      name="Copy of Special_YesNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Special_YesNo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title_Cap]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title_Cap]"
+                      name="Copy of Title_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Title_Cap]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Actor_Cap]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Actor_Cap]"
+                      name="Copy of Actor_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Actor_Cap]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input].Columns[TITLE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TITLE"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input].Columns[ACTOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACTOR"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input].Columns[SPECIAL]"
+                      cachedDataType="ui1"
+                      cachedName="SPECIAL"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[SPECIAL]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Special_YesNo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Special_YesNo]"
+                      name="Special_YesNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[SPECIAL]} == 0 ? "No " : "Yes"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SPECIAL == 0 ? "No " : "Yes"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Title_Cap]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Title_Cap]"
+                      name="Title_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]},1,1) + [LOWER]([SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]},2,[FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]}," ",1) - 1)) + [SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]},[FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]}," ",1) + 1,1) + [LOWER]([SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]},[FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]}," ",1) + 2,[LEN](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]}) - [FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]}," ",1)))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(TITLE,1,1) + LOWER(SUBSTRING(TITLE,2,FINDSTRING(TITLE," ",1) - 1)) + SUBSTRING(TITLE,FINDSTRING(TITLE," ",1) + 1,1) + LOWER(SUBSTRING(TITLE,FINDSTRING(TITLE," ",1) + 2,LEN(TITLE) - FINDSTRING(TITLE," ",1)))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Actor_Cap]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Actor_Cap]"
+                      name="Actor_Cap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]},1,1) + [LOWER]([SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]},2,[FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]}," ",1) - 1)) + [SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]},[FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]}," ",1) + 1,1) + [LOWER]([SUBSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]},[FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]}," ",1) + 2,[LEN](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]}) - [FINDSTRING](#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]}," ",1)))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(ACTOR,1,1) + LOWER(SUBSTRING(ACTOR,2,FINDSTRING(ACTOR," ",1) - 1)) + SUBSTRING(ACTOR,FINDSTRING(ACTOR," ",1) + 1,1) + LOWER(SUBSTRING(ACTOR,FINDSTRING(ACTOR," ",1) + 2,LEN(ACTOR) - FINDSTRING(ACTOR," ",1)))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Product\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[PROD_ID]"
+                      cachedDataType="i4"
+                      cachedName="PROD_ID"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PROD_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[CATEGORYNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORYNAME"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORYNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[PRICE]"
+                      cachedDataType="cy"
+                      cachedName="PRICE"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PRICE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[EffectiveStartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveStartDate"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveStartDate]"
+                      lineageId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Output].Columns[EffectiveStartDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[NEW Copy of Title_Cap]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NEW Copy of Title_Cap"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Title_Cap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[NEW Copy of Actor_Cap]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NEW Copy of Actor_Cap"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Actor]"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Actor_Cap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[NEW Copy of Special_YesNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="NEW Copy of Special_YesNo"
+                      externalMetadataColumnId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Special]"
+                      lineageId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output].Columns[NEW Copy of Special_YesNo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Actor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Actor" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      dataType="cy"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Special]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Special" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveEndDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveEndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Lookup Category"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Category"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CATEGORIES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CATEGORIES]) [refTable]
+where [refTable].[CATEGORY] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CATEGORY" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CATEGORYNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[CATEGORY]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Product\Lookup Category.Connections[OleDbConnection]"
+                  connectionManagerID="{B21ECBA7-E6CF-4C9E-8503-ABF73973E415}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDS2]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Lookup Category.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Lookup Category.Inputs[Lookup Input].Columns[CATEGORY]"
+                      cachedDataType="ui1"
+                      cachedName="CATEGORY"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[CATEGORY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CATEGORY</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Product\Lookup Category.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output].Columns[CATEGORYNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output].Columns[CATEGORYNAME]"
+                      name="CATEGORYNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CATEGORYNAME</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Lookup Category.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Product\Lookup Category.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Product\Lookup Category.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Product] SET [EffectiveEndDate] = ? WHERE [ProductID] = ? AND [EffectiveEndDate] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Product\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[PROD_ID]"
+                      cachedDataType="i4"
+                      cachedName="PROD_ID"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[EffectiveEndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveEndDate"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Output].Columns[EffectiveEndDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\OLE DB Source Products"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source Products"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PRODUCTS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Product\OLE DB Source Products.Connections[OleDbConnection]"
+                  connectionManagerID="{B21ECBA7-E6CF-4C9E-8503-ABF73973E415}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDS2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[PROD_ID]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]"
+                      name="PROD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[CATEGORY]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[CATEGORY]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[CATEGORY]"
+                      name="CATEGORY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[TITLE]"
+                      length="50"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]"
+                      name="TITLE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[ACTOR]"
+                      length="50"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]"
+                      name="ACTOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PRICE]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PRICE]"
+                      name="PRICE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[SPECIAL]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[SPECIAL]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[SPECIAL]"
+                      name="SPECIAL"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[PROD_ID]"
+                      dataType="i4"
+                      name="PROD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[CATEGORY]"
+                      dataType="ui1"
+                      name="CATEGORY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[TITLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TITLE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[ACTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACTOR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
+                      dataType="cy"
+                      name="PRICE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[SPECIAL]"
+                      dataType="ui1"
+                      name="SPECIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].ExternalColumns[COMMON_PROD_ID]"
+                      dataType="i4"
+                      name="COMMON_PROD_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[PROD_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[PROD_ID]"
+                      name="PROD_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[CATEGORY]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[CATEGORY]"
+                      name="CATEGORY" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[TITLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[TITLE]"
+                      name="TITLE" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[ACTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[ACTOR]"
+                      name="ACTOR" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[PRICE]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[PRICE]"
+                      name="PRICE" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[SPECIAL]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[SPECIAL]"
+                      name="SPECIAL" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Actor], [Category], [Price], [ProductID], [Special], [Title],[EffectiveStartDate],[EffectiveEndDate] FROM [dbo].[Product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[EffectiveStartDate] IS NOT NULL AND [EffectiveEndDate] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Actor_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Actor_Cap"
+                      externalMetadataColumnId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Actor]"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Actor_Cap]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CATEGORYNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORYNAME"
+                      externalMetadataColumnId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Category]"
+                      lineageId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output].Columns[CATEGORYNAME]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PRICE]"
+                      cachedDataType="cy"
+                      cachedName="PRICE"
+                      externalMetadataColumnId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Price]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PRICE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[PROD_ID]"
+                      cachedDataType="i4"
+                      cachedName="PROD_ID"
+                      externalMetadataColumnId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Special_YesNo]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Copy of Special_YesNo"
+                      externalMetadataColumnId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Special]"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Special_YesNo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Title_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Title_Cap"
+                      externalMetadataColumnId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Title]"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title_Cap]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Actor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Actor" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Price]"
+                      dataType="cy"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Special]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Special" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveStartDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveEndDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveEndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Product\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[PROD_ID]"
+                      cachedDataType="i4"
+                      cachedName="PROD_ID"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PROD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[CATEGORY]"
+                      cachedDataType="ui1"
+                      cachedName="CATEGORY"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[CATEGORY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[TITLE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TITLE"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[TITLE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[ACTOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACTOR"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[ACTOR]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[PRICE]"
+                      cachedDataType="cy"
+                      cachedName="PRICE"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[SPECIAL]"
+                      cachedDataType="ui1"
+                      cachedName="SPECIAL"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[SPECIAL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[SPECIAL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[CATEGORYNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORYNAME"
+                      lineageId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output].Columns[CATEGORYNAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORYNAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[Special_YesNo]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Special_YesNo"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Special_YesNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Special_YesNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[Title_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Title_Cap"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Title_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Title_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[Actor_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Actor_Cap"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Actor_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Actor_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[Copy of Special_YesNo]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Copy of Special_YesNo"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Special_YesNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Special_YesNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[Copy of Title_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Title_Cap"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Title_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 1].Columns[Copy of Actor_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Actor_Cap"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Actor_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Actor_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[PROD_ID]"
+                      cachedDataType="i4"
+                      cachedName="PROD_ID"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PROD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[CATEGORY]"
+                      cachedDataType="ui1"
+                      cachedName="CATEGORY"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[CATEGORY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[TITLE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TITLE"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[TITLE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[TITLE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[ACTOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACTOR"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[ACTOR]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[ACTOR]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[PRICE]"
+                      cachedDataType="cy"
+                      cachedName="PRICE"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PRICE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PRICE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[SPECIAL]"
+                      cachedDataType="ui1"
+                      cachedName="SPECIAL"
+                      lineageId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output].Columns[SPECIAL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[SPECIAL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[CATEGORYNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORYNAME"
+                      lineageId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output].Columns[CATEGORYNAME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORYNAME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[Special_YesNo]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Special_YesNo"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Special_YesNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Special_YesNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[Title_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Title_Cap"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Title_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Title_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[Actor_Cap]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Actor_Cap"
+                      lineageId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output].Columns[Actor_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Actor_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[Copy of Special_YesNo]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Copy of Special_YesNo"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Special_YesNo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Special_YesNo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[Copy of Title_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Title_Cap"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Title_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Product\Union All.Inputs[Union All Input 2].Columns[Copy of Actor_Cap]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Actor_Cap"
+                      lineageId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Actor_Cap]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Actor_Cap]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Product\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PROD_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PROD_ID]"
+                      name="PROD_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORY]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORY]"
+                      name="CATEGORY" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[TITLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[TITLE]"
+                      name="TITLE" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[ACTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[ACTOR]"
+                      name="ACTOR" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PRICE]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[PRICE]"
+                      name="PRICE" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[SPECIAL]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[SPECIAL]"
+                      name="SPECIAL" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORYNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[CATEGORYNAME]"
+                      name="CATEGORYNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Special_YesNo]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Special_YesNo]"
+                      name="Special_YesNo" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Title_Cap]"
+                      dataType="wstr"
+                      length="101"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Title_Cap]"
+                      name="Title_Cap" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Actor_Cap]"
+                      dataType="wstr"
+                      length="101"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Actor_Cap]"
+                      name="Actor_Cap" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Special_YesNo]"
+                      codePage="1251"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Special_YesNo]"
+                      name="Copy of Special_YesNo" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Title_Cap]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Title_Cap]"
+                      name="Copy of Title_Cap" />
+                    <outputColumn
+                      refId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Actor_Cap]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Product\Union All.Outputs[Union All Output 1].Columns[Copy of Actor_Cap]"
+                      name="Copy of Actor_Cap" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Product.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Product\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Product\Convert to STR.Inputs[Data Conversion Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Product\Convert to WSTR.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Data Conversion Output2]"
+              endId="Package\Data Flow Product\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Product\Convert to STR.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Derived Column Output]"
+              endId="Package\Data Flow Product\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Product\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Product\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Product\Add End Date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Product\Convert to WSTR.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Product\Add Start Date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Historical Attribute Inserts Output]"
+              endId="Package\Data Flow Product\Add End Date.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Product\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Product\Lookup Category.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[New Output]"
+              endId="Package\Data Flow Product\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\Data Flow Product\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[OLE DB Command Output]"
+              endId="Package\Data Flow Product\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Data Flow Product\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Product\Lookup Category.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Product\OLE DB Source Products.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Product.Paths[Union All Output 1]"
+              endId="Package\Data Flow Product\Add Start Date.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Product\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Data Flow Product"
+          TopLeft="138,111" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Product">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Data Flow Product\OLE DB Source Products"
+          TopLeft="138.5,5.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Product\Lookup Category"
+          TopLeft="158.5,79.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[OLE DB Source Output]"
+          TopLeft="240,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow Product\Derived Column"
+          TopLeft="162,149.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Lookup Match Output]"
+          TopLeft="240.5,121.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Data Flow Product\Data Conversion"
+          TopLeft="160.5,216.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Derived Column Output]"
+          TopLeft="241,191.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Data Flow Product\Slowly Changing Dimension"
+          TopLeft="133,282.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Data Conversion Output]"
+          TopLeft="241,258.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Data Flow Product\Add End Date"
+          TopLeft="16.5000000000001,363.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Historical Attribute Inserts Output]"
+          TopLeft="206.333333333333,324.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116.333333333333,39"
+              Start="0,0"
+              End="-116.333333333333,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.7720588235294" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.7720588235294"
+                    Point2="0,15.7720588235294"
+                    Point3="-4,15.7720588235294" />
+                  <mssgle:LineSegment
+                    End="-112.333333333333,15.7720588235294" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112.333333333333,15.7720588235294"
+                    Point2="-116.333333333333,15.7720588235294"
+                    Point3="-116.333333333333,19.7720588235294" />
+                  <mssgle:LineSegment
+                    End="-116.333333333333,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.223053385417,20.7720588235294,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Data Flow Product\OLE DB Command"
+          TopLeft="4.50000000000006,432.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Derived Column Output1]"
+          TopLeft="90.5000000000001,405.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Data Flow Product\Union All"
+          TopLeft="192.5,508.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[New Output]"
+          TopLeft="274.416666666667,324.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,184"
+              Start="0,0"
+              End="0,176.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,176.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,82.533203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[OLE DB Command Output]"
+          TopLeft="91.0000000000001,474.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143.833333333333,34"
+              Start="0,0"
+              End="143.833333333333,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1380417335474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1380417335474"
+                    Point2="0,20.1380417335474"
+                    Point3="4,20.1380417335474" />
+                  <mssgle:LineSegment
+                    End="139.833333333333,20.1380417335474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139.833333333333,20.1380417335474"
+                    Point2="143.833333333333,20.1380417335474"
+                    Point3="143.833333333333,24.1380417335474" />
+                  <mssgle:LineSegment
+                    End="143.833333333333,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Product\Add Start Date"
+          TopLeft="179.5,583.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Union All Output 1]"
+          TopLeft="254.5,550.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Product\Insert Destination"
+          TopLeft="167.5,804.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Product\Convert to WSTR"
+          TopLeft="170,663" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Derived Column Output2]"
+          TopLeft="253.75,625.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.5"
+              Start="0,0"
+              End="0,30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Product\Convert to STR"
+          TopLeft="173,736" />
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Data Conversion Output1]"
+          TopLeft="251.5,705">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Product.Paths[Data Conversion Output2]"
+          TopLeft="250.25,778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.5"
+              Start="0,0"
+              End="0,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Product\OLE DB Source Products">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Product\Lookup Category">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[CATEGORIES]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Product\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{1B3373AD-C598-40AE-A839-B30CD9A1FF37}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Product]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Actor_Cap]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Actor&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup Category.Outputs[Lookup Match Output].Columns[CATEGORYNAME]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Category&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PRICE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Price&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source Products.Outputs[OLE DB Source Output].Columns[PROD_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Special_YesNo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Special&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title_Cap]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Title&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;EffectiveStartDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;EffectiveEndDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Product\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

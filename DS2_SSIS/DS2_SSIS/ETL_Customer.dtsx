@@ -1,0 +1,1567 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/23/2020 3:05:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-0OE0JIH"
+  DTS:CreatorName="DESKTOP-0OE0JIH\user"
+  DTS:DTSID="{52CA0924-488A-473C-B72A-4925E49B38A8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{65D9703A-7182-4272-AF9E-0EF701BE8A81}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Customer"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EB1AE602-3616-406D-8108-58CDBAAED5FE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Customer"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Customer\Add FullName column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add FullName column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\Add FullName column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Add FullName column.Inputs[Derived Column Input].Columns[FIRSTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FIRSTNAME"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Add FullName column.Inputs[Derived Column Input].Columns[LASTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LASTNAME"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Customer\Add FullName column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output].Columns[FullName]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,101,1251)(#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]} + " " + #{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,101,1251)(FIRSTNAME + " " + LASTNAME)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Customer\Add FullName column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\Convert to STR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to STR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\Convert to STR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Convert to STR.Inputs[Data Conversion Input].Columns[Copy of FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Copy of FullName"
+                      lineageId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Output].Columns[Copy of FullName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Customer\Convert to STR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Output].Columns[Copy of Copy of FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Output].Columns[Copy of Copy of FullName]"
+                      name="Copy of Copy of FullName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Output].Columns[Copy of FullName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Customer\Convert to STR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\Convert to WSTR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to WSTR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\Convert to WSTR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Convert to WSTR.Inputs[Data Conversion Input].Columns[FullName]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="FullName"
+                      lineageId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output].Columns[FullName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Customer\Convert to WSTR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Output].Columns[Copy of FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Output].Columns[Copy of FullName]"
+                      name="Copy of FullName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output].Columns[FullName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Customer\Convert to WSTR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\Extract from Customers table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract from Customers table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CUSTOMERS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Customer\Extract from Customers table.Connections[OleDbConnection]"
+                  connectionManagerID="{B21ECBA7-E6CF-4C9E-8503-ABF73973E415}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDS2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[CUSTOMERID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERID]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[CUSTOMERID]"
+                      name="CUSTOMERID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[FIRSTNAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]"
+                      name="FIRSTNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[LASTNAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]"
+                      name="LASTNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[AGE]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[AGE]"
+                      name="AGE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[INCOME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[INCOME]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[INCOME]"
+                      name="INCOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[GENDER]"
+                      length="1"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[GENDER]"
+                      name="GENDER"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERID]"
+                      dataType="i4"
+                      name="CUSTOMERID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[FIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[LASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ADDRESS1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[ZIP]"
+                      dataType="i4"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                      dataType="ui1"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[CREDITCARDTYPE]"
+                      dataType="ui1"
+                      name="CREDITCARDTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[CREDITCARD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CREDITCARD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[CREDITCARDEXPIRATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CREDITCARDEXPIRATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[USERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="USERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[PASSWORD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PASSWORD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                      dataType="ui1"
+                      name="AGE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[INCOME]"
+                      dataType="i4"
+                      name="INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].ExternalColumns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GENDER" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[CUSTOMERID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[CUSTOMERID]"
+                      name="CUSTOMERID" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[FIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[FIRSTNAME]"
+                      name="FIRSTNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[LASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[LASTNAME]"
+                      name="LASTNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[AGE]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[AGE]"
+                      name="AGE" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[INCOME]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[INCOME]"
+                      name="INCOME" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[GENDER]"
+                      name="GENDER" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Customer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Customer\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMERID]"
+                      cachedDataType="i4"
+                      cachedName="CUSTOMERID"
+                      externalMetadataColumnId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[CUSTOMERID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].Columns[AGE]"
+                      cachedDataType="ui1"
+                      cachedName="AGE"
+                      externalMetadataColumnId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[AGE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].Columns[INCOME]"
+                      cachedDataType="i4"
+                      cachedName="INCOME"
+                      externalMetadataColumnId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Income]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[INCOME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].Columns[GENDER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="GENDER"
+                      externalMetadataColumnId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[GENDER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of Copy of FullName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="Copy of Copy of FullName"
+                      externalMetadataColumnId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Output].Columns[Copy of Copy of FullName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="ui1"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Income]"
+                      dataType="i4"
+                      name="Income" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Gender" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Customer] SET [Age] = ?,[FullName] = ?,[Income] = ? WHERE [CustomerID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Customer\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].Columns[AGE]"
+                      cachedDataType="ui1"
+                      cachedName="AGE"
+                      externalMetadataColumnId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[AGE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].Columns[CUSTOMERID]"
+                      cachedDataType="i4"
+                      cachedName="CUSTOMERID"
+                      externalMetadataColumnId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[CUSTOMERID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].Columns[FullName]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].Columns[INCOME]"
+                      cachedDataType="i4"
+                      cachedName="INCOME"
+                      externalMetadataColumnId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[INCOME]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="ui1"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1251"
+                      dataType="str"
+                      length="101"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Age], [CustomerID], [FullName], [Gender], [Income] FROM [dbo].[Customer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AGE]"
+                      cachedDataType="ui1"
+                      cachedName="AGE"
+                      externalMetadataColumnId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Age]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[AGE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CUSTOMERID]"
+                      cachedDataType="i4"
+                      cachedName="CUSTOMERID"
+                      externalMetadataColumnId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[CUSTOMERID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[FullName]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
+                      lineageId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output].Columns[FullName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[GENDER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="GENDER"
+                      externalMetadataColumnId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Gender]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[GENDER]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[INCOME]"
+                      cachedDataType="i4"
+                      cachedName="INCOME"
+                      externalMetadataColumnId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Income]"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[INCOME]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Age]"
+                      dataType="ui1"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Income]"
+                      dataType="i4"
+                      name="Income" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Transform uppercase to lowercase excluding first letters"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Inputs[Derived Column Input].Columns[FIRSTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FIRSTNAME"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([SUBSTRING](#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]},1,1)) + [LOWER]([SUBSTRING](#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]},2,[LEN](#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[FIRSTNAME]}) - 1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(SUBSTRING(FIRSTNAME,1,1)) + LOWER(SUBSTRING(FIRSTNAME,2,LEN(FIRSTNAME) - 1))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Inputs[Derived Column Input].Columns[LASTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LASTNAME"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([SUBSTRING](#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]},1,1)) + [LOWER]([SUBSTRING](#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]},2,[LEN](#{Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output].Columns[LASTNAME]}) - 1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(SUBSTRING(LASTNAME,1,1)) + LOWER(SUBSTRING(LASTNAME,2,LEN(LASTNAME) - 1))</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Customer.Paths[Changing Attribute Updates Output]"
+              endId="Package\Data Flow Customer\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Data Flow Customer.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Customer\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Customer\Convert to STR.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Customer.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Customer\Convert to STR.Inputs[Data Conversion Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Customer\Convert to WSTR.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Customer.Paths[Derived Column Output]"
+              endId="Package\Data Flow Customer\Add FullName column.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Customer.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Customer\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Customer\Add FullName column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Customer.Paths[New Output]"
+              endId="Package\Data Flow Customer\Convert to WSTR.Inputs[Data Conversion Input]"
+              name="New Output"
+              startId="Package\Data Flow Customer\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Data Flow Customer.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Customer\Extract from Customers table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Data Flow Customer"
+          TopLeft="210,137" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Customer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Data Flow Customer\Extract from Customers table"
+          TopLeft="207.5,5.49999999999989" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Customer\Convert to STR"
+          TopLeft="138,416" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Customer\Insert Destination"
+          TopLeft="136.5,493.5" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Data Flow Customer\Slowly Changing Dimension"
+          TopLeft="208,242.5" />
+        <NodeLayout
+          Size="351,42"
+          Id="Package\Data Flow Customer\Transform uppercase to lowercase excluding first letters"
+          TopLeft="146.5,83.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Customer\Convert to WSTR"
+          TopLeft="135,340" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Data Flow Customer\OLE DB Command"
+          TopLeft="349,417.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Data Flow Customer\Add FullName column"
+          TopLeft="228.5,163.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[OLE DB Source Output]"
+          TopLeft="320,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.0000000000001"
+              Start="0,0"
+              End="0,28.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[New Output]"
+          TopLeft="281.333333333333,284.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.8333333333333,55.5"
+              Start="0,0"
+              End="-63.8333333333333,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4448529411765" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4448529411765"
+                    Point2="0,22.4448529411765"
+                    Point3="-4,22.4448529411765" />
+                  <mssgle:LineSegment
+                    End="-59.8333333333333,22.4448529411765" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.8333333333333,22.4448529411765"
+                    Point2="-63.8333333333333,22.4448529411765"
+                    Point3="-63.8333333333333,26.4448529411765" />
+                  <mssgle:LineSegment
+                    End="-63.8333333333333,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-59.0080533854167,27.4448529411765,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[Derived Column Output1]"
+          TopLeft="319,205.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[Derived Column Output]"
+          TopLeft="322,125.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[Data Conversion Output1]"
+          TopLeft="216.5,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[Data Conversion Output]"
+          TopLeft="217.25,458">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5"
+              Start="0,0"
+              End="0,28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Customer.Paths[Changing Attribute Updates Output]"
+          TopLeft="350.666666666667,284.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.8333333333334,133"
+              Start="0,0"
+              End="84.8333333333334,125.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.7867647058824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.7867647058824"
+                    Point2="0,53.7867647058824"
+                    Point3="4,53.7867647058824" />
+                  <mssgle:LineSegment
+                    End="80.8333333333334,53.7867647058824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80.8333333333334,53.7867647058824"
+                    Point2="84.8333333333334,53.7867647058824"
+                    Point3="84.8333333333334,57.7867647058824" />
+                  <mssgle:LineSegment
+                    End="84.8333333333334,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.1172395833333,58.7867647058824,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Customer\Extract from Customers table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Customer\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Customer\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{1B3373AD-C598-40AE-A839-B30CD9A1FF37}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Customer]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Customers table.Outputs[OLE DB Source Output].Columns[AGE]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Age&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Customers table.Outputs[OLE DB Source Output].Columns[CUSTOMERID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CustomerID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Add FullName column.Outputs[Derived Column Output].Columns[FullName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FullName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Customers table.Outputs[OLE DB Source Output].Columns[GENDER]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Gender&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extract from Customers table.Outputs[OLE DB Source Output].Columns[INCOME]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Income&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

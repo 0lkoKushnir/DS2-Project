@@ -1,0 +1,2243 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/14/2020 8:51:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-0OE0JIH"
+  DTS:CreatorName="DESKTOP-0OE0JIH\user"
+  DTS:DTSID="{7231E73E-E04F-4FC0-AC68-CCFC7FA16761}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1058"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{7C65BC6A-448B-43B3-B09F-418A93F92290}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{89DEF2E9-6B18-4C61-8446-8BAB103AD4C7}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Oleh\EPAM\Project\DS2_SSIS\Log\unknownRegion.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Location"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{86E3DBB1-A0D0-458A-BF78-15F1A7D49AB0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Location"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Location\Convert to Excel"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to Excel"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted CITY]"
+                      name="Converted CITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted STATE]"
+                      name="Converted STATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted COUNTRY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted COUNTRY]"
+                      name="Converted COUNTRY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Destination DWH DS2 Location"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination DWH DS2 Location"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Location]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Location\Destination DWH DS2 Location.Connections[OleDbConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].Columns[Region Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region Name"
+                      externalMetadataColumnId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[Region Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      dataType="i4"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Destination DWH DS2 Location.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Destination DWH DS2 Location.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Destination DWH DS2 Location.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Destination DWH DS2 Location.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Region$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Location\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].Columns[REGION]"
+                      cachedDataType="ui1"
+                      cachedName="REGION"
+                      externalMetadataColumnId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].Columns[Converted COUNTRY]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Converted COUNTRY"
+                      externalMetadataColumnId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].Columns[Converted STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Converted STATE"
+                      externalMetadataColumnId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted STATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].Columns[Converted CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Converted CITY"
+                      externalMetadataColumnId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output].Columns[Converted CITY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="255"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Lookup new data"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup new data"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Location]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Location]) [refTable]
+where [refTable].[City] = ? and [refTable].[State] = ? and [refTable].[Country] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LocationID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Country" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="State" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="City" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]};#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]};#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Location\Lookup new data.Connections[OleDbConnection]"
+                  connectionManagerID="{1B3373AD-C598-40AE-A839-B30CD9A1FF37}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">City</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">State</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Country</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Lookup new data.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Lookup new data.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Lookup new data.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Lookup new data.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Lookup new data.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Lookup new data.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Lookup new data.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Replace STATE nulls &amp; capitalize CITY"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Inputs[Derived Column Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]},"")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(STATE,"")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Inputs[Derived Column Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([SUBSTRING](#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]},1,1)) + [LOWER]([SUBSTRING](#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]},2,[LEN](#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]}) - 1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(SUBSTRING(CITY,1,1)) + LOWER(SUBSTRING(CITY,2,LEN(CITY) - 1))</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Set Non-USA region"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set Non-USA region"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Set Non-USA region.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Location\Set Non-USA region.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Output].Columns[Region Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Output].Columns[Region Name]"
+                      name="Region Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)"Non-USA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)"Non-USA"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Location\Set Non-USA region.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Set USA region"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set USA region"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Set USA region.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Location\Set USA region.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Output].Columns[Region Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Output].Columns[Region Name]"
+                      name="Region Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)"USA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)"USA"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Location\Set USA region.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Sort.Inputs[Sort Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[CITY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Sort.Inputs[Sort Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[STATE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Sort.Inputs[Sort Input].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[COUNTRY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Sort.Inputs[Sort Input].Columns[REGION]"
+                      cachedDataType="ui1"
+                      cachedName="REGION"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[REGION]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Sort.Inputs[Sort Input].Columns[Region Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region Name"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[Region Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[CITY]"
+                      name="CITY"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[CITY]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[STATE]"
+                      name="STATE"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[STATE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[COUNTRY]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[REGION]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[REGION]"
+                      name="REGION"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[REGION]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[Region Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Sort.Outputs[Sort Output].Columns[Region Name]"
+                      name="Region Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[Region Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Source DB DS2 Customers"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source DB DS2 Customers"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CUSTOMERS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Location\Source DB DS2 Customers.Connections[OleDbConnection]"
+                  connectionManagerID="{B21ECBA7-E6CF-4C9E-8503-ABF73973E415}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[connectionDS2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]"
+                      name="REGION"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERID]"
+                      dataType="i4"
+                      name="CUSTOMERID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[FIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[LASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ADDRESS1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[ZIP]"
+                      dataType="i4"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                      dataType="ui1"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[CREDITCARDTYPE]"
+                      dataType="ui1"
+                      name="CREDITCARDTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[CREDITCARD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CREDITCARD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[CREDITCARDEXPIRATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CREDITCARDEXPIRATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[USERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="USERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[PASSWORD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PASSWORD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[AGE]"
+                      dataType="ui1"
+                      name="AGE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[INCOME]"
+                      dataType="i4"
+                      name="INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].ExternalColumns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GENDER" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[REGION]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[REGION]"
+                      name="REGION" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Split regions"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Split regions"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input].Columns[REGION]"
+                      cachedDataType="ui1"
+                      cachedName="REGION"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Split regions.Outputs[USA region]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="USA region"
+                  synchronousInputId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">REGION == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Split regions.Outputs[Non-USA region]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Non-USA region"
+                  synchronousInputId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]} == 2</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">REGION == 2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Split regions.Outputs[Unknown region]"
+                  description="Output 3 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Unknown region"
+                  synchronousInputId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]} != 1 &amp;&amp; #{Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]} != 2</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">REGION != 1 &amp;&amp; REGION != 2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Split regions.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Location\Split regions.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Split regions.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Split regions.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Split regions.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Location\Split regions.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Location\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Location\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 1].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[CITY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 1].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[STATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 1].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[COUNTRY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 1].Columns[REGION]"
+                      cachedDataType="ui1"
+                      cachedName="REGION"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[REGION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 1].Columns[Region Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region Name"
+                      lineageId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Output].Columns[Region Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[Region Name]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Location\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 2].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[CITY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[CITY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 2].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[STATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[STATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 2].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COUNTRY"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[COUNTRY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[COUNTRY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 2].Columns[REGION]"
+                      cachedDataType="ui1"
+                      cachedName="REGION"
+                      lineageId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output].Columns[REGION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[REGION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Location\Union All.Inputs[Union All Input 2].Columns[Region Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region Name"
+                      lineageId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Output].Columns[Region Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[Region Name]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Location\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Location\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[REGION]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[REGION]"
+                      name="REGION" />
+                    <outputColumn
+                      refId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[Region Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Location\Union All.Outputs[Union All Output 1].Columns[Region Name]"
+                      name="Region Name" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Location.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Location\Excel Destination.Inputs[Excel Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Location\Convert to Excel.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Derived Column Output]"
+              endId="Package\Data Flow Location\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Location\Set USA region.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Location\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Location\Set Non-USA region.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Location\Lookup new data.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Location\Split regions.Inputs[Conditional Split Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Location\Lookup new data.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Non-USA region]"
+              endId="Package\Data Flow Location\Set Non-USA region.Inputs[Derived Column Input]"
+              name="Non-USA region"
+              startId="Package\Data Flow Location\Split regions.Outputs[Non-USA region]" />
+            <path
+              refId="Package\Data Flow Location.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Location\Source DB DS2 Customers.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Sort Output]"
+              endId="Package\Data Flow Location\Destination DWH DS2 Location.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Location\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Union All Output 1]"
+              endId="Package\Data Flow Location\Sort.Inputs[Sort Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Location\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Data Flow Location.Paths[Unknown region]"
+              endId="Package\Data Flow Location\Convert to Excel.Inputs[Data Conversion Input]"
+              name="Unknown region"
+              startId="Package\Data Flow Location\Split regions.Outputs[Unknown region]" />
+            <path
+              refId="Package\Data Flow Location.Paths[USA region]"
+              endId="Package\Data Flow Location\Set USA region.Inputs[Derived Column Input]"
+              name="USA region"
+              startId="Package\Data Flow Location\Split regions.Outputs[USA region]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Data Flow Location"
+          TopLeft="247,136" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Location">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Data Flow Location\Split regions"
+          TopLeft="249.5,247.5" />
+        <NodeLayout
+          Size="271,42"
+          Id="Package\Data Flow Location\Replace STATE nulls &amp; capitalize CITY"
+          TopLeft="188,86" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Location\Excel Destination"
+          TopLeft="467,413" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Data Flow Location\Sort"
+          TopLeft="172,501" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Data Flow Location\Set Non-USA region"
+          TopLeft="232,342" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Data Flow Location\Source DB DS2 Customers"
+          TopLeft="214.5,15.5" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Data Flow Location\Union All"
+          TopLeft="157,425" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Data Flow Location\Destination DWH DS2 Location"
+          TopLeft="103,573" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Flow Location\Convert to Excel"
+          TopLeft="471,341" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Location\Lookup new data"
+          TopLeft="238,157" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Location\Set USA region"
+          TopLeft="31,345" />
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Derived Column Output2]"
+          TopLeft="321.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Derived Column Output1]"
+          TopLeft="321,384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.3333333333333,41"
+              Start="0,0"
+              End="-83.3333333333333,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2841091492777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2841091492777"
+                    Point2="0,20.2841091492777"
+                    Point3="-4,20.2841091492777" />
+                  <mssgle:LineSegment
+                    End="-79.3333333333333,20.2841091492777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.3333333333333,20.2841091492777"
+                    Point2="-83.3333333333333,20.2841091492777"
+                    Point3="-83.3333333333333,24.2841091492777" />
+                  <mssgle:LineSegment
+                    End="-83.3333333333333,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Derived Column Output]"
+          TopLeft="108.5,387">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89,38"
+              Start="0,0"
+              End="89,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="85,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85,19"
+                    Point2="89,19"
+                    Point3="89,23" />
+                  <mssgle:LineSegment
+                    End="89,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Data Conversion Output]"
+          TopLeft="549.75,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[USA region]"
+          TopLeft="286.5,289.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178,55.5"
+              Start="0,0"
+              End="-178,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1915887850467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1915887850467"
+                    Point2="0,19.1915887850467"
+                    Point3="-4,19.1915887850467" />
+                  <mssgle:LineSegment
+                    End="-174,19.1915887850467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174,19.1915887850467"
+                    Point2="-178,19.1915887850467"
+                    Point3="-178,23.1915887850467" />
+                  <mssgle:LineSegment
+                    End="-178,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-113.83587890625,24.1915887850467,49.6717578125,11.4677734375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Unknown region]"
+          TopLeft="352.5,289.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="198,51.5"
+              Start="0,0"
+              End="198,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8084112149533" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8084112149533"
+                    Point2="0,17.8084112149533"
+                    Point3="4,17.8084112149533" />
+                  <mssgle:LineSegment
+                    End="194,17.8084112149533" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194,17.8084112149533"
+                    Point2="198,17.8084112149533"
+                    Point3="198,21.8084112149533" />
+                  <mssgle:LineSegment
+                    End="198,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.66412109375,22.8084112149533,72.6717578125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Union All Output 1]"
+          TopLeft="220,467">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Sort Output]"
+          TopLeft="220.25,543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[OLE DB Source Output]"
+          TopLeft="322,57.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.5"
+              Start="0,0"
+              End="0,21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Non-USA region]"
+          TopLeft="320.25,289.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.5"
+              Start="0,0"
+              End="0,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.4486002604167,16.76611328125,70.8972005208333,11.4677734375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Location.Paths[Lookup No Match Output]"
+          TopLeft="319.5,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5"
+              Start="0,0"
+              End="0,41">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,14.6953125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Location\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Location\Source DB DS2 Customers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Location\Destination DWH DS2 Location">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Location\Lookup new data">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Location]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
