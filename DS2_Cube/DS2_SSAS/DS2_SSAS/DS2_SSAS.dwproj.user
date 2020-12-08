@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>DESKTOP-0OE0JIH\DAMSKIYSQL</TargetServer>
+        <TargetServer>ECSD00300F36</TargetServer>
         <TargetDatabase>DS2_SSAS</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

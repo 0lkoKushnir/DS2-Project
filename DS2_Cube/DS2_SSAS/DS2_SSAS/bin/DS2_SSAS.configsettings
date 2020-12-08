@@ -3,10 +3,10 @@
     <DataSources>
       <DataSource>
         <ID>DS2 DWH</ID>
-        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-0OE0JIH\DAMSKIYSQL;Integrated Security=SSPI;Initial Catalog=DS2_DWH</ConnectionString>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=ECSD00300F36;Integrated Security=SSPI;Initial Catalog=DS2_DWH</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
-          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">olko.kushnir@gmail.com</Account>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">oleh_kushnir@epam.com</Account>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>

@@ -56,7 +56,7 @@
           <ConfigurationSetting>
             <Id>DS2 DWH</Id>
             <Name>DS2 DWH</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-0OE0JIH\DAMSKIYSQL;Integrated Security=SSPI;Initial Catalog=DS2_DWH</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ECSD00300F36;Integrated Security=SSPI;Initial Catalog=DS2_DWH</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
