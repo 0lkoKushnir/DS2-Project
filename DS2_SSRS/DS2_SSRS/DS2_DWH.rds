@@ -3,6 +3,7 @@
   <ConnectionProperties>
     <Extension>SQL</Extension>
     <ConnectString>Data Source=ECSD00300F36;Initial Catalog=DS2_DWH</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>667874c7-3d16-4d7f-b493-b88952b3663d</DataSourceID>
 </RptDataSource>
