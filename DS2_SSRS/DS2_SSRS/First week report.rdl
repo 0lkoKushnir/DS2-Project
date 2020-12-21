@@ -94,12 +94,12 @@ group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYe
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <Height>0.43in</Height>
-            <Width>16.57292in</Width>
+            <Width>6.8125in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -468,7 +468,7 @@ group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYe
             <DataSetName>First_week_dataset</DataSetName>
             <Top>0.49945in</Top>
             <Height>4.23888in</Height>
-            <Width>8.02083in</Width>
+            <Width>6.8125in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -837,10 +837,9 @@ group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYe
               </Style>
             </ChartNoDataMessage>
             <DataSetName>First_week_dataset</DataSetName>
-            <Top>0.49944in</Top>
-            <Left>8.55209in</Left>
+            <Top>4.80777in</Top>
             <Height>4.23889in</Height>
-            <Width>8.02083in</Width>
+            <Width>6.8125in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -852,10 +851,10 @@ group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYe
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.73833in</Height>
+        <Height>9.04666in</Height>
         <Style />
       </Body>
-      <Width>16.57292in</Width>
+      <Width>6.8125in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

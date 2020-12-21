@@ -126,13 +126,13 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
             <Height>0.43in</Height>
-            <Width>16.3125in</Width>
+            <Width>6.5in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -144,7 +144,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>8.83333in</Width>
+                  <Width>6.5in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -175,7 +175,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                               </Paragraphs>
                               <rd:DefaultName>TheYear</rd:DefaultName>
                               <Height>0.27in</Height>
-                              <Width>8.83333in</Width>
+                              <Width>6.5in</Width>
                               <Style>
                                 <BackgroundColor>#cd3115</BackgroundColor>
                                 <FontFamily />
@@ -189,30 +189,30 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>1.29167in</Width>
+                                    <Width>0.70238in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.1875in</Width>
+                                    <Width>1.32738in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.3125in</Width>
+                                    <Width>0.79613in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.36458in</Width>
+                                    <Width>0.96279in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.3125in</Width>
+                                    <Width>0.9003in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1in</Width>
+                                    <Width>0.93155in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.36458in</Width>
+                                    <Width>0.87946in</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.22in</Height>
+                                    <Height>0.45in</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -223,7 +223,24 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Week no.</Value>
+                                                    <Value>Week</Value>
+                                                    <Style>
+                                                      <FontFamily />
+                                                      <FontSize>11pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>LightGrey</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <FontFamily />
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>no.</Value>
                                                     <Style>
                                                       <FontFamily />
                                                       <FontSize>11pt</FontSize>
@@ -306,7 +323,24 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Orders made</Value>
+                                                    <Value>Orders</Value>
+                                                    <Style>
+                                                      <FontFamily />
+                                                      <FontSize>11pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>LightGrey</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <FontFamily />
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>made</Value>
                                                     <Style>
                                                       <FontFamily />
                                                       <FontSize>11pt</FontSize>
@@ -348,7 +382,24 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Products sold</Value>
+                                                    <Value>Products</Value>
+                                                    <Style>
+                                                      <FontFamily />
+                                                      <FontSize>11pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>LightGrey</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <FontFamily />
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>sold</Value>
                                                     <Style>
                                                       <FontFamily />
                                                       <FontSize>11pt</FontSize>
@@ -390,7 +441,24 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Net amount</Value>
+                                                    <Value>Net</Value>
+                                                    <Style>
+                                                      <FontFamily />
+                                                      <FontSize>11pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>LightGrey</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <FontFamily />
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>amount</Value>
                                                     <Style>
                                                       <FontFamily />
                                                       <FontSize>11pt</FontSize>
@@ -474,7 +542,24 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Total amount</Value>
+                                                    <Value>Total</Value>
+                                                    <Style>
+                                                      <FontFamily />
+                                                      <FontSize>11pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>LightGrey</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <FontFamily />
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>amount</Value>
                                                     <Style>
                                                       <FontFamily />
                                                       <FontSize>11pt</FontSize>
@@ -1075,8 +1160,8 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                               </TablixRowHierarchy>
                               <DataSetName>Week_dataset</DataSetName>
                               <Top>0.27in</Top>
-                              <Height>0.64in</Height>
-                              <Width>8.83333in</Width>
+                              <Height>0.87in</Height>
+                              <Width>6.5in</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <FontFamily />
@@ -1128,7 +1213,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
             </PageBreak>
             <Top>0.65in</Top>
             <Height>1.14in</Height>
-            <Width>8.83333in</Width>
+            <Width>6.5in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <FontSize>14pt</FontSize>
@@ -1498,10 +1583,9 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
               </Style>
             </ChartNoDataMessage>
             <DataSetName>Month_dataset</DataSetName>
-            <Top>0.43in</Top>
-            <Left>8.94792in</Left>
+            <Top>2.055in</Top>
             <Height>6.59833in</Height>
-            <Width>7.36458in</Width>
+            <Width>6.5in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1513,10 +1597,10 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
             </Style>
           </Chart>
         </ReportItems>
-        <Height>7.02833in</Height>
+        <Height>8.65333in</Height>
         <Style />
       </Body>
-      <Width>16.3125in</Width>
+      <Width>6.5in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
