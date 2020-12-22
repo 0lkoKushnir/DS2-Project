@@ -451,10 +451,10 @@ ORDER BY SalesAmount DESC</CommandText>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>1.03708in</Height>
+        <Height>1.76625in</Height>
         <Style />
       </Body>
-      <Width>6.91667in</Width>
+      <Width>8.36459in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

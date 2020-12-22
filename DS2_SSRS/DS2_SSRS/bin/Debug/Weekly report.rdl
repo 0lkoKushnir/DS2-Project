@@ -747,6 +747,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                                     <Style>
                                                       <FontFamily />
                                                       <FontWeight>Bold</FontWeight>
+                                                      <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
                                                     </Style>
                                                   </TextRun>
@@ -764,6 +765,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
+                                              <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -781,6 +783,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                                     <Style>
                                                       <FontFamily />
                                                       <FontWeight>Bold</FontWeight>
+                                                      <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
                                                     </Style>
                                                   </TextRun>
@@ -798,6 +801,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
+                                              <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -815,6 +819,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                                     <Style>
                                                       <FontFamily />
                                                       <FontWeight>Bold</FontWeight>
+                                                      <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
                                                     </Style>
                                                   </TextRun>
@@ -832,6 +837,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
+                                              <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -1002,6 +1008,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                                     <Value>=Fields!SumNetAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily />
+                                                      <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
                                                     </Style>
                                                   </TextRun>
@@ -1023,6 +1030,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
+                                              <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -1039,6 +1047,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                                     <Value>=Fields!SumTax.Value</Value>
                                                     <Style>
                                                       <FontFamily />
+                                                      <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
                                                     </Style>
                                                   </TextRun>
@@ -1060,6 +1069,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
+                                              <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -1076,6 +1086,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                                     <Value>=Fields!SumTotalAmount.Value</Value>
                                                     <Style>
                                                       <FontFamily />
+                                                      <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
                                                     </Style>
                                                   </TextRun>
@@ -1097,6 +1108,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
                                               <PaddingBottom>2pt</PaddingBottom>
+                                              <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                             </Style>
                                           </Textbox>
                                         </CellContents>
@@ -1161,7 +1173,7 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
                               <DataSetName>Week_dataset</DataSetName>
                               <Top>0.27in</Top>
                               <Height>0.87in</Height>
-                              <Width>6.5in</Width>
+                              <Width>6.49999in</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <FontFamily />
