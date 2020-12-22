@@ -13,6 +13,11 @@
     <DataSet Name="Week_dataset">
       <Query>
         <DataSourceName>DS2_DWH</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@parCategory">
+            <Value>=Parameters!parCategory.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>select 
    Date.TheWeekInYear
    ,Date.TheYear
@@ -25,6 +30,7 @@
 from FactOrder inner join
     Date on FactOrder.DateID = Date.DateID inner join
 	Product on FactOrder.ProductID = Product.ProductID
+where Product.Category in (@parCategory)
 group by Date.TheYear, Date.TheWeekInYear, Product.Category</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -66,6 +72,14 @@ group by Date.TheYear, Date.TheWeekInYear, Product.Category</CommandText>
     <DataSet Name="Month_dataset">
       <Query>
         <DataSourceName>DS2_DWH</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@parMonth">
+            <Value>=Parameters!parMonth.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@parCategory">
+            <Value>=Parameters!parCategory.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>select 
    Date.TheMonthName
    ,Date.TheYear
@@ -76,6 +90,8 @@ group by Date.TheYear, Date.TheWeekInYear, Product.Category</CommandText>
 from FactOrder inner join
     Date on FactOrder.DateID = Date.DateID inner join
 	Product on FactOrder.ProductID = Product.ProductID
+where Date.TheMonth in (@parMonth) and
+    Product.Category in (@parCategory)
 group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</CommandText>
       </Query>
       <Fields>
@@ -102,6 +118,40 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
         <Field Name="SumProductQuantity">
           <DataField>SumProductQuantity</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="parMonth_dataset">
+      <Query>
+        <DataSourceName>DS2_DWH</DataSourceName>
+        <CommandText>select distinct 
+    TheMonthName
+    ,TheMonth
+from Date
+order by TheMonth</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="TheMonthName">
+          <DataField>TheMonthName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TheMonth">
+          <DataField>TheMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="parCategory_dataset">
+      <Query>
+        <DataSourceName>DS2_DWH</DataSourceName>
+        <CommandText>select distinct Category
+from Product
+order by Category</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Category">
+          <DataField>Category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1622,10 +1672,60 @@ group by Date.TheYear, Date.TheMonthName, Date.TheMonth, Product.Category</Comma
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="parMonth">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>parMonth_dataset</DataSetName>
+          <ValueField>TheMonth</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Month</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>parMonth_dataset</DataSetName>
+          <ValueField>TheMonth</ValueField>
+          <LabelField>TheMonthName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="parCategory">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>parCategory_dataset</DataSetName>
+          <ValueField>Category</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Category</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>parCategory_dataset</DataSetName>
+          <ValueField>Category</ValueField>
+          <LabelField>Category</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>parMonth</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>parCategory</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <Language>en-US</Language>

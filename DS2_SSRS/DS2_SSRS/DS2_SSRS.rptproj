@@ -52,10 +52,10 @@
     <DataSource Include="DS2_DWH.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="First week report.rdl" />
+    <Report Include="FirstWeekReport.rdl" />
     <Report Include="MedianSales.rdl" />
     <Report Include="SalesRating.rdl" />
-    <Report Include="Weekly report.rdl" />
+    <Report Include="WeeklyReport.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

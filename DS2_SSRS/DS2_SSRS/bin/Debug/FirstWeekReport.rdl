@@ -895,14 +895,14 @@ order by TheMonth</CommandText>
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>Month_dataset</DataSetName>
+          <DataSetName>parMonth_dataset</DataSetName>
           <ValueField>TheMonth</ValueField>
         </DataSetReference>
       </DefaultValue>
       <Prompt>Month</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>Month_dataset</DataSetName>
+          <DataSetName>parMonth_dataset</DataSetName>
           <ValueField>TheMonth</ValueField>
           <LabelField>TheMonthName</LabelField>
         </DataSetReference>

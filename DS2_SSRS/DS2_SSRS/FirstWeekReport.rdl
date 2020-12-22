@@ -13,6 +13,11 @@
     <DataSet Name="First_week_dataset">
       <Query>
         <DataSourceName>DS2_DWH</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@parMonth">
+            <Value>=Parameters!parMonth.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
         <CommandText>select 
    Date.TheDate
    ,Date.TheDay
@@ -26,7 +31,8 @@
    ,sum(FactOrder.TotalAmount) as SumTotalAmount
 from FactOrder inner join
     Date on FactOrder.DateID = Date.DateID
-where (Date.TheDay &lt;= 7)
+where (Date.TheDay &lt;= 7) and
+    Date.TheMonth in (@parMonth)
 group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYear</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -70,6 +76,26 @@ group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYe
         <Field Name="SumTotalAmount">
           <DataField>SumTotalAmount</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="parMonth_dataset">
+      <Query>
+        <DataSourceName>DS2_DWH</DataSourceName>
+        <CommandText>select distinct 
+    TheMonthName
+    ,TheMonth
+from Date
+order by TheMonth</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="TheMonthName">
+          <DataField>TheMonthName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TheMonth">
+          <DataField>TheMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -864,10 +890,37 @@ group by Date.TheDate, Date.TheDay, Date.TheMonthName, Date.TheMonth, Date.TheYe
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="parMonth">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>parMonth_dataset</DataSetName>
+          <ValueField>TheMonth</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Month</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>parMonth_dataset</DataSetName>
+          <ValueField>TheMonth</ValueField>
+          <LabelField>TheMonthName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>parMonth</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <Language>en-US</Language>
