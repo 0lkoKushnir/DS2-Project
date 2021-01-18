@@ -1,0 +1,6 @@
+-- Net Amount over the 1st trimester (first 4 months) of 2009
+
+SELECT {[Measures].[Net Amount]} ON COLUMNS
+	, [Date].[The Month].&[1] : [Date].[The Month].&[4] ON ROWS
+FROM [DS2 Cube]
+WHERE [Date].[The Year].&[2009];

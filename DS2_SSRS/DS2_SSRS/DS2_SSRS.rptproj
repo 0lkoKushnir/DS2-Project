@@ -55,6 +55,8 @@
     <Report Include="FirstWeekReport.rdl" />
     <Report Include="MedianSales.rdl" />
     <Report Include="SalesRating.rdl" />
+    <Report Include="TopNCustomers.rdl" />
+    <Report Include="TopNProducts.rdl" />
     <Report Include="WeeklyReport.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

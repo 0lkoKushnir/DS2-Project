@@ -1,0 +1,7 @@
+-- Net Amount and Quantity per year
+
+SELECT {[Measures].[Net Amount], [Measures].[Quantity]} ON COLUMNS
+	, NONEMPTY ( 
+		{[Date].[The Year].[The Year]} 
+	) ON ROWS
+FROM [DS2 Cube];
