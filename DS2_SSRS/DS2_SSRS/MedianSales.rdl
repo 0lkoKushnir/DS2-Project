@@ -117,7 +117,7 @@ ORDER BY Country</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>MedianSales Concerning Category and Country</Value>
+                    <Value>Median Sales Concerning Category and Country</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>20pt</FontSize>
@@ -184,7 +184,7 @@ ORDER BY Country</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -212,7 +212,7 @@ ORDER BY Country</CommandText>
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -224,7 +224,7 @@ ORDER BY Country</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -252,7 +252,7 @@ ORDER BY Country</CommandText>
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -264,7 +264,7 @@ ORDER BY Country</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -302,10 +302,16 @@ ORDER BY Country</CommandText>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
+                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <RightBorder>
+                              <Color>Gray</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -332,17 +338,25 @@ ORDER BY Country</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>MedianSales</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
+                              <Style>None</Style>
                             </Border>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <RightBorder>
+                              <Color>Gray</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -420,7 +434,9 @@ ORDER BY Country</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
             <FixedColumnHeaders>true</FixedColumnHeaders>
+            <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.48556in</Top>
             <Left>0.10417in</Left>
@@ -469,7 +485,7 @@ ORDER BY Country</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -501,7 +517,7 @@ ORDER BY Country</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -533,7 +549,7 @@ ORDER BY Country</CommandText>
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -602,7 +618,9 @@ ORDER BY Country</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>MedianSales1</rd:DefaultName>
@@ -681,7 +699,9 @@ ORDER BY Country</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
             <FixedColumnHeaders>true</FixedColumnHeaders>
+            <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>DataSet2</DataSetName>
             <Top>0.48556in</Top>
             <Left>3.47569in</Left>

@@ -73,24 +73,24 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.85056cm</Width>
+                  <Width>1.57559in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.19452cm</Width>
+                  <Width>1.18189in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.18189in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.18189in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.85056cm</Width>
+                  <Width>1.37874in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.65292cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -101,21 +101,24 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Product Title</Value>
+                                  <Value>Product title</Value>
                                   <Style>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox45</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -135,20 +138,23 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Number Of Orders</Value>
+                                  <Value>Orders made</Value>
                                   <Style>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -168,21 +174,24 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Sales</Value>
+                                  <Value>Total sales</Value>
                                   <Style>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00'$';(#,0.00'$')</Format>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -203,20 +212,23 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Tax</Value>
+                                  <Value>Total tax</Value>
                                   <Style>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -238,19 +250,22 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                                 <TextRun>
                                   <Value>Category</Value>
                                   <Style>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox49</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -264,7 +279,7 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.65292cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -281,15 +296,18 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>ProductTitle1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -314,15 +332,18 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NumberOfOrders1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -343,19 +364,23 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                                   <Value>=Fields!TotalSales.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Format>#,0.00'$';(#,0.00'$')</Format>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TotalSales2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -377,19 +402,23 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                                   <Value>=Fields!TotalTax.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Format>#,0.00'$';(#,0.00'$')</Format>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TotalTax2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -414,15 +443,18 @@ GROUP BY Product.Title, Product.[Category]</CommandText>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Category1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -507,23 +539,23 @@ Parameters!Column.Value = "TotalTax", Fields!TotalTax.Value
               </SortExpression>
             </SortExpressions>
             <Top>0cm</Top>
-            <Left>0.42333cm</Left>
-            <Height>1.2cm</Height>
-            <Width>13.89564cm</Width>
+            <Left>0cm</Left>
+            <Height>1.30583cm</Height>
+            <Width>6.5in</Width>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>10.88353in</Height>
+        <Height>0.51411in</Height>
         <Style />
       </Body>
-      <Width>7.1921in</Width>
+      <Width>6.5in</Width>
       <Page>
         <PageHeader>
-          <Height>2.01083cm</Height>
+          <Height>1.12599cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -573,10 +605,9 @@ Parameters!Column.Value = "TotalTax", Fields!TotalTax.Value
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox72</rd:DefaultName>
-              <Top>0.29104cm</Top>
-              <Left>0.16667in</Left>
+              <Top>0cm</Top>
               <Height>1.12599cm</Height>
-              <Width>16.41964cm</Width>
+              <Width>6.5in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -617,6 +648,11 @@ Parameters!Column.Value = "TotalTax", Fields!TotalTax.Value
     </ReportParameter>
     <ReportParameter Name="Column">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="OrderCount"</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Display:</Prompt>
       <ValidValues>
         <ParameterValues>
@@ -629,7 +665,7 @@ Parameters!Column.Value = "TotalTax", Fields!TotalTax.Value
             <Label>Total Sales</Label>
           </ParameterValue>
           <ParameterValue>
-            <Value>= "TotalTax"</Value>
+            <Value>="TotalTax"</Value>
             <Label>Total Tax</Label>
           </ParameterValue>
         </ParameterValues>
@@ -658,6 +694,12 @@ Parameters!Column.Value = "TotalTax", Fields!TotalTax.Value
     </ReportParameter>
     <ReportParameter Name="Category">
       <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DSet_Categories</DataSetName>
+          <ValueField>Category</ValueField>
+        </DataSetReference>
+      </DefaultValue>
       <Prompt>Category:</Prompt>
       <ValidValues>
         <DataSetReference>

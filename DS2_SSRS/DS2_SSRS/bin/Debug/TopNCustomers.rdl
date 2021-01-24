@@ -163,13 +163,13 @@ ORDER BY [Country];</CommandText>
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.24083cm</Width>
+                  <Width>2.97625cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.12958cm</Width>
+                  <Width>2.39416cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.44167cm</Width>
+                  <Width>1.70875cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.62688cm</Width>
@@ -197,21 +197,25 @@ ORDER BY [Country];</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Full Name</Value>
+                                  <Value>Full name</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -231,20 +235,24 @@ ORDER BY [Country];</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Number Of Orders</Value>
+                                  <Value>Orders made</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -264,20 +272,24 @@ ORDER BY [Country];</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Sales</Value>
+                                  <Value>Total sales</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -299,19 +311,23 @@ ORDER BY [Country];</CommandText>
                                 <TextRun>
                                   <Value>Gender</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -333,19 +349,23 @@ ORDER BY [Country];</CommandText>
                                 <TextRun>
                                   <Value>Region</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -367,19 +387,23 @@ ORDER BY [Country];</CommandText>
                                 <TextRun>
                                   <Value>Country</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -401,19 +425,23 @@ ORDER BY [Country];</CommandText>
                                 <TextRun>
                                   <Value>Age</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -435,19 +463,23 @@ ORDER BY [Country];</CommandText>
                                 <TextRun>
                                   <Value>Category</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>DimGray</Color>
+                                    <Color>LightGrey</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox22</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <BackgroundColor>Tomato</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -476,15 +508,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>FullName</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -506,15 +541,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NumberOfOrders</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -534,19 +572,23 @@ ORDER BY [Country];</CommandText>
                                 <TextRun>
                                   <Value>=Fields!TotalSales.Value</Value>
                                   <Style>
-                                    <Format>#,0.00'$';(#,0.00'$')</Format>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TotalSales</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -569,15 +611,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Gender</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -599,15 +644,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Region</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -629,15 +677,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Country</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -659,15 +710,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Age</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -689,15 +743,18 @@ ORDER BY [Country];</CommandText>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Category</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WHITE", "#ffc7ab")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -777,24 +834,24 @@ Parameters!Column.Value = "TotalSales", Fields!TotalSales.Value
                 <Direction>Descending</Direction>
               </SortExpression>
             </SortExpressions>
-            <Top>0cm</Top>
-            <Left>0.42016cm</Left>
+            <Top>0.17639cm</Top>
+            <Left>0cm</Left>
             <Height>1.2cm</Height>
-            <Width>16.24292cm</Width>
+            <Width>16.51cm</Width>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>7.72303in</Height>
+        <Height>0.54189in</Height>
         <Style />
       </Body>
-      <Width>7.2015in</Width>
+      <Width>6.5in</Width>
       <Page>
         <PageHeader>
-          <Height>2.06375cm</Height>
+          <Height>1.08479cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -844,10 +901,10 @@ Parameters!Column.Value = "TotalSales", Fields!TotalSales.Value
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
-              <Top>0.36724cm</Top>
-              <Left>0.42016cm</Left>
+              <Top>0cm</Top>
+              <Left>0cm</Left>
               <Height>1.08479cm</Height>
-              <Width>17.19541cm</Width>
+              <Width>6.5in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -889,9 +946,10 @@ Parameters!Column.Value = "TotalSales", Fields!TotalSales.Value
     <ReportParameter Name="Region">
       <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>="Non-USA"</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>DSet_Region</DataSetName>
+          <ValueField>Region</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Region:</Prompt>
       <ValidValues>
@@ -906,9 +964,10 @@ Parameters!Column.Value = "TotalSales", Fields!TotalSales.Value
     <ReportParameter Name="Gender">
       <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>="F"</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>DSet_Gender</DataSetName>
+          <ValueField>Gender</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Gender:</Prompt>
       <ValidValues>
@@ -943,6 +1002,12 @@ Parameters!Column.Value = "TotalSales", Fields!TotalSales.Value
     </ReportParameter>
     <ReportParameter Name="Country">
       <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DSet_Country</DataSetName>
+          <ValueField>Country</ValueField>
+        </DataSetReference>
+      </DefaultValue>
       <Prompt>Country:</Prompt>
       <ValidValues>
         <DataSetReference>
@@ -956,9 +1021,10 @@ Parameters!Column.Value = "TotalSales", Fields!TotalSales.Value
     <ReportParameter Name="Category">
       <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>="Animation"</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>DSet_Categories</DataSetName>
+          <ValueField>Category</ValueField>
+        </DataSetReference>
       </DefaultValue>
       <Prompt>Product Category:</Prompt>
       <ValidValues>

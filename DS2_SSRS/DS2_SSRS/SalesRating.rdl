@@ -95,12 +95,11 @@ ORDER BY SalesAmount DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -112,7 +111,7 @@ ORDER BY SalesAmount DESC</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -136,13 +135,12 @@ ORDER BY SalesAmount DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -154,7 +152,7 @@ ORDER BY SalesAmount DESC</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -178,12 +176,11 @@ ORDER BY SalesAmount DESC</CommandText>
                                     <FontFamily />
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -195,7 +192,7 @@ ORDER BY SalesAmount DESC</CommandText>
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>Red</BackgroundColor>
+                            <BackgroundColor>Salmon</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -448,8 +445,8 @@ ORDER BY SalesAmount DESC</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.49944in</Top>
-            <Left>1.76042in</Left>
+            <Top>0.47167in</Top>
+            <Left>0.125in</Left>
             <Height>0.43in</Height>
             <Width>3.1875in</Width>
             <ZIndex>1</ZIndex>
@@ -527,8 +524,7 @@ ORDER BY SalesAmount DESC</CommandText>
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
-                      <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontFamily>Arial</FontFamily>
                     </Style>
                     <ChartAxisTitle>
                       <Caption>Category</Caption>
@@ -573,6 +569,7 @@ ORDER BY SalesAmount DESC</CommandText>
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -758,7 +755,7 @@ ORDER BY SalesAmount DESC</CommandText>
               <ChartLegend Name="Default">
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
+                  <FontFamily>Arial</FontFamily>
                 </Style>
                 <Position>TopLeft</Position>
                 <ChartLegendTitle>
@@ -769,6 +766,7 @@ ORDER BY SalesAmount DESC</CommandText>
                     <TextAlign>Center</TextAlign>
                   </Style>
                 </ChartLegendTitle>
+                <AutoFitTextDisabled>true</AutoFitTextDisabled>
                 <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                 <ColumnSeparatorColor>Black</ColumnSeparatorColor>
               </ChartLegend>
@@ -806,7 +804,7 @@ ORDER BY SalesAmount DESC</CommandText>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
             <Top>1.00069in</Top>
-            <Left>0.64584in</Left>
+            <Left>0.125in</Left>
             <Height>3.70639in</Height>
             <Width>5.63542in</Width>
             <ZIndex>2</ZIndex>

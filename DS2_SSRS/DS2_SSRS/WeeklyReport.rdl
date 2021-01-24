@@ -181,6 +181,7 @@ order by Category</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
+            <Left>0.00002in</Left>
             <Height>0.43in</Height>
             <Width>6.5in</Width>
             <Style>
@@ -199,7 +200,7 @@ order by Category</CommandText>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.14in</Height>
+                  <Height>1.18167in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1060,6 +1061,7 @@ order by Category</CommandText>
                                                       <FontFamily />
                                                       <Format>'$'#,0.00;('$'#,0.00)</Format>
                                                       <Color>#333333</Color>
+                                                      <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1221,7 +1223,7 @@ order by Category</CommandText>
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>Week_dataset</DataSetName>
-                              <Top>0.27in</Top>
+                              <Top>0.31167in</Top>
                               <Height>0.87in</Height>
                               <Width>6.49999in</Width>
                               <ZIndex>1</ZIndex>
@@ -1273,8 +1275,9 @@ order by Category</CommandText>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Top>0.65in</Top>
-            <Height>1.14in</Height>
+            <Top>0.49944in</Top>
+            <Left>0.00001in</Left>
+            <Height>1.18167in</Height>
             <Width>6.5in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1645,7 +1648,7 @@ order by Category</CommandText>
               </Style>
             </ChartNoDataMessage>
             <DataSetName>Month_dataset</DataSetName>
-            <Top>2.055in</Top>
+            <Top>1.75056in</Top>
             <Height>6.59833in</Height>
             <Width>6.5in</Width>
             <ZIndex>2</ZIndex>
@@ -1659,10 +1662,10 @@ order by Category</CommandText>
             </Style>
           </Chart>
         </ReportItems>
-        <Height>8.65333in</Height>
+        <Height>8.34889in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>6.50002in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
