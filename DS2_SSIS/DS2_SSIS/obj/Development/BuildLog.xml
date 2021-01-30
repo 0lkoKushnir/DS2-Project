@@ -2,38 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DS2_SSIS</Name>
-    <LastWriteTime>2020-12-08T15:34:09.1843133Z</LastWriteTime>
+    <LastWriteTime>2021-01-30T21:21:04.924159Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL_Location.dtsx</Name>
-      <LastWriteTime>2020-12-08T15:34:09.0972762Z</LastWriteTime>
+      <LastWriteTime>2021-01-30T21:21:04.9554873Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ETL_Customer.dtsx</Name>
-      <LastWriteTime>2020-12-08T15:31:44.6823065Z</LastWriteTime>
+      <LastWriteTime>2021-01-30T21:21:04.9397551Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ETL_Product.dtsx</Name>
-      <LastWriteTime>2020-12-08T14:48:26.0827181Z</LastWriteTime>
+      <LastWriteTime>2021-01-30T21:21:04.9554873Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Master_Incremental.dtsx</Name>
-      <LastWriteTime>2020-12-08T14:48:26.0917008Z</LastWriteTime>
+      <LastWriteTime>2021-01-30T21:21:04.9710629Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Master_Full.dtsx</Name>
-      <LastWriteTime>2020-12-08T15:36:51.2748728Z</LastWriteTime>
+      <LastWriteTime>2021-01-30T21:21:04.9554873Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ETL_FactOrder.dtsx</Name>
-      <LastWriteTime>2020-12-08T14:48:26.0717225Z</LastWriteTime>
+      <LastWriteTime>2021-01-30T21:21:04.9554873Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
