@@ -463,7 +463,7 @@ ORDER BY SalesAmount DESC</CommandText>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Category.Value</Value>
+                      <Value>=Fields!SalesAmount.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <Label>=Fields!Category.Value</Label>
@@ -483,6 +483,7 @@ ORDER BY SalesAmount DESC</CommandText>
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
+                        <X>=Fields!Category.Value</X>
                         <Y>=Sum(Fields!SalesAmount.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
